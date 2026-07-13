@@ -1,325 +1,587 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Unity Developer Resume">
-    <title>Unity Developer Resume</title>
-    <style>
-        /* Basic reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            background-color: #f4f4f9;
-            color: #333;
-        }
-        .container {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            font-size: 3rem;
-            text-align: center;
-            color: #000;
-            margin-bottom: 20px;
-            letter-spacing: 2px;
-        }
-        h2 {
-            font-size: 1.8rem;
-            color: #000;
-            margin-bottom: 15px;
-        }
-        h3 {
-            font-size: 1.5rem;
-            color: #333;
-            margin-top: 15px;
-            margin-bottom: 10px;
-        }
-	     hr {
-            border: none; 
-            height: 0.2px; 
-            background-color: #000; 
-            margin-top: 40px; 
-            margin-bottom: 40px; 
-			margin-right: 30px; 
-			
-        }
-        p {
-            margin-bottom: 5px;
-			padding-left: 10px;
-        }
-      
-		
-	    .no-dots {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-        }
-        .no-dots li {
-            margin-bottom: 10px;
-            padding-left: 10px;
-            position: relative;
-        }
-        .no-dots li:before {
-            content: "";
-            color: #000;
-            position: absolute;
-            left: 0;
-        }
-    
-        .with-dots {
-            list-style-type: none;
-            padding-left: 20px;
-            margin: 0;
-        }
-        .with-dots li {
-             margin-bottom: 10px;
-            padding-left: 10px;
-            position: relative;
-        }
-		 .with-dots li:before {
-            content: "•";
-            color: #000;
-            position: absolute;
-            left: 0;
-        }
-		
-        a {
-            color: #000;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        .section {
-            margin-bottom: 30px;
-        }
-        .section h2 {
-            border-bottom: 2px solid #000;
-            padding-bottom: 5px;
-        }
-        .skills ul {
-            columns: 2;
-        }
-        .contact ul {
-            list-style-type: none;
-        }
-        .contact li {
-            margin-bottom: 8px;
-        }
-        .button {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #000;
-            color: white;
-            border-radius: 5px;
-            text-decoration: none;
-            font-size: 1rem;
-        }
-        .button:hover {
-            background-color: #333;
-        }
-        .portfolio-image {
-            width: 100%;
-            height: auto;
-            display: block;
-            margin: 20px 0;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Oleksii Kryzhanovskyi — Senior Unity / C# Developer resume." />
+  <title>Oleksii Kryzhanovskyi — Unity Developer</title>
+  <style>
+    :root {
+      --bg: #f6f7fb;
+      --panel: #ffffff;
+      --text: #172033;
+      --muted: #5f6b7a;
+      --line: #dfe4ec;
+      --accent: #315fce;
+      --accent-soft: #eef3ff;
+      --chip: #f1f4f9;
+      --shadow: 0 18px 45px rgba(22, 34, 54, 0.08);
+      --radius: 18px;
+      --max-width: 1080px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .page {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 32px 20px 64px;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #ffffff 0%, #eef3ff 100%);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      padding: 42px;
+      margin-bottom: 24px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.02em;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-size: clamp(34px, 5vw, 54px);
+      line-height: 1.05;
+      margin: 0 0 12px;
+      letter-spacing: -0.04em;
+    }
+
+    .headline {
+      font-size: 20px;
+      color: var(--muted);
+      margin: 0 0 22px;
+      max-width: 780px;
+    }
+
+    .contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .contact a,
+    .contact span {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 8px 12px;
+      color: var(--text);
+      font-size: 14px;
+    }
+
+    .hero-card {
+      min-width: 220px;
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 20px;
+    }
+
+    .hero-card strong {
+      display: block;
+      font-size: 30px;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .hero-card span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    section {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: 0 10px 30px rgba(22, 34, 54, 0.04);
+      padding: 26px;
+      margin-bottom: 24px;
+    }
+
+    h2 {
+      margin: 0 0 18px;
+      font-size: 19px;
+      letter-spacing: -0.02em;
+    }
+
+    h3 {
+      margin: 0;
+      font-size: 18px;
+      letter-spacing: -0.01em;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 14px;
+      margin: 3px 0 12px;
+    }
+
+
+    .link-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 8px 0 12px;
+    }
+
+    .link-row a {
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 5px 9px;
+      background: var(--accent-soft);
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .summary {
+      font-size: 16px;
+      margin: 0;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .chip {
+      background: var(--chip);
+      border: 1px solid var(--line);
+      color: #29364a;
+      border-radius: 999px;
+      padding: 7px 10px;
+      font-size: 13px;
+      line-height: 1.2;
+    }
+
+    .skill-group + .skill-group {
+      margin-top: 18px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+    }
+
+    .skill-group h3 {
+      font-size: 14px;
+      margin-bottom: 10px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .item {
+      padding-left: 18px;
+      border-left: 3px solid var(--accent-soft);
+      margin-bottom: 24px;
+    }
+
+    .item:last-child {
+      margin-bottom: 0;
+    }
+
+    ul {
+      margin: 10px 0 0;
+      padding-left: 20px;
+    }
+
+    li {
+      margin: 7px 0;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .project {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 16px;
+      background: #fbfcff;
+    }
+
+    .project h3 {
+      font-size: 16px;
+      margin-bottom: 6px;
+    }
+
+    .project p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .note {
+      color: var(--muted);
+      font-size: 14px;
+      margin: 12px 0 0;
+    }
+
+    footer {
+      color: var(--muted);
+      text-align: center;
+      font-size: 13px;
+      padding: 24px 0 0;
+    }
+
+    @media (max-width: 860px) {
+      .hero {
+        padding: 28px;
+      }
+
+      .hero-grid,
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-card {
+        min-width: 0;
+      }
+
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media print {
+      :root {
+        --bg: #ffffff;
+        --panel: #ffffff;
+        --shadow: none;
+      }
+
+      body {
+        background: #ffffff;
+        font-size: 12px;
+      }
+
+      .page {
+        padding: 0;
+        max-width: none;
+      }
+
+      .hero,
+      section {
+        box-shadow: none;
+        border-radius: 0;
+        border-color: #cccccc;
+        break-inside: avoid;
+      }
+
+      .hero {
+        padding: 24px;
+      }
+
+      .layout {
+        grid-template-columns: 280px 1fr;
+        gap: 16px;
+      }
+
+      a {
+        color: #000000;
+      }
+
+      footer {
+        display: none;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Unity Developer Resume</h1>
+  <main class="page">
+    <header class="hero">
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow">Senior Unity / C# Developer</div>
+          <h1>Oleksii Kryzhanovskyi</h1>
+          <p class="headline">
+            Unity developer with 8+ years of experience building mobile games, VR/AR applications,
+            gameplay systems, UI-heavy features, tools, SDK integrations, and performance-focused
+            production solutions.
+          </p>
 
-        <div class="section"> 
-			<div class="section professional-summary">            
-            <h2>Professional Summary</h2>			
-            <p>Hello, I’m <strong>Kryzhanovskyi Olekseii</strong>, experienced Unity Developer with over 6 years in the industry, specializing in VR, AR, and 2D/3D game development. Proven track record in leading teams, optimizing code, and integrating complex networking solutions. Passionate about creating immersive gaming experiences and continuously enhancing technical skills.</p>
+          <div class="contact" aria-label="Contact and location">
+            <span>Portugal · Remote / Hybrid EU</span>
+            <span>Unity · C# · Mobile · XR</span>
+            <a href="mailto:alkrfree@gmail.com">alkrfree@gmail.com</a>
+            <a href="https://www.linkedin.com/in/oleksii-kryzhanovskyi-199a3466/" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://github.com/alkrfree" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+
+        <aside class="hero-card" aria-label="Experience highlights">
+          <strong>8+ yrs</strong>
+          <span>Unity / C# experience</span>
+          <br><br>
+          <strong>Lead</strong>
+          <span>developer & mentor experience</span>
+          <br><br>
+          <strong>XR</strong>
+          <span>Magic Leap 2 · HoloLens 2</span>
+        </aside>
+      </div>
+    </header>
+
+    <div class="layout">
+      <aside>
+        <section>
+          <h2>Core Skills</h2>
+
+          <div class="skill-group">
+            <h3>Unity / C#</h3>
+            <div class="chips">
+              <span class="chip">Unity</span>
+              <span class="chip">C#</span>
+              <span class="chip">OOP</span>
+              <span class="chip">SOLID</span>
+              <span class="chip">Design Patterns</span>
+              <span class="chip">Async / Await</span>
+              <span class="chip">Coroutines</span>
+              <span class="chip">Editor Tools</span>
             </div>
-        </div>
+          </div>
 
-        <div class="section skills">
-            <h2>Skills</h2>
-             <ul class="no-dots">
-                <li><strong>Programming:</strong> Proficient in C# with a strong understanding of OOP principles and design patterns.</li>
-                <li><strong>Networking:</strong> Solid knowledge of Photon Bolt, PUN, and server-side integration.</li>
-                <li><strong>Version Control:</strong> Experienced with Git and other source control systems.</li>
-                <li><strong>Monetization & Analytics:</strong> Familiar with Unity Ads, Unity Analytics, In-App Purchases, Facebook SDK, and IronSource.</li>
-                <li><strong>VR/AR Development:</strong> Extensive experience with Oculus Rift, HTC Vive, WMR, and AR technologies.</li>
-                <li><strong>Editor Scripting:</strong> Proficient in creating Unity Editor scripts and custom tools.</li>
-                <li><strong>Data Management:</strong> Experience working with JSON, XML, and Message Pack.</li>
-                <li><strong>Game Development:</strong> Skilled in game physics, particle systems, multiplayer integration, and engine optimization.</li>
-                <li><strong>Web Technologies:</strong> Knowledge of HTML/CSS, PHP, MySQL, and phpMyAdmin.</li>
-                <li><strong>AI Integration:</strong> Familiar with Unity ML Agents.</li>
-                <li><strong>Team Leadership:</strong> Experience in mentoring, task planning, and cross-departmental collaboration.</li>
-                <li><strong>Soft Skills:</strong> Strong communication abilities and experience in workflow optimization.</li>
-            </ul>
-        </div>	
-		
-		<div class="section non-professional-skills">
-           <h2>Non-professional Skills</h2>
-           <ul class="no-dots">
-               <li><strong>GameMaster:</strong> Tabletop Role-Playing Game Master</li>               
-           </ul>
-        </div>
+          <div class="skill-group">
+            <h3>Gameplay / Mobile</h3>
+            <div class="chips">
+              <span class="chip">2D / 3D</span>
+              <span class="chip">Physics</span>
+              <span class="chip">UI / UX</span>
+              <span class="chip">Mobile Optimization</span>
+              <span class="chip">Profiling</span>
+              <span class="chip">SDK Integration</span>
+              <span class="chip">IAP / Ads</span>
+            </div>
+          </div>
 
-        <div class="section education">
-            <h2>Education and Certifications</h2>
-            <ul class="no-dots">
-                <li>Bachelor’s Degree in Program Engineering</li>
-                <li>Unity3D C# Developer - IT Step Academy</li>
-                <li>Second Place in Global Game Jam 2018 (Ukraine)</li>
-            </ul>
-        </div>
-		
-	
+          <div class="skill-group">
+            <h3>Frameworks / Tools</h3>
+            <div class="chips">
+              <span class="chip">Zenject</span>
+              <span class="chip">Addressables</span>
+              <span class="chip">Odin Inspector</span>
+              <span class="chip">Git</span>
+              <span class="chip">SVN</span>
+            </div>
+          </div>
 
-        <div class="section experience">
-            <h2>Experience</h2>
+          <div class="skill-group">
+            <h3>XR / Networking</h3>
+            <div class="chips">
+              <span class="chip">OpenXR</span>
+              <span class="chip">MRTK</span>
+              <span class="chip">Magic Leap 2</span>
+              <span class="chip">HoloLens 2</span>
+              <span class="chip">Photon</span>
+              <span class="chip">Multiplayer</span>
+            </div>
+          </div>
+        </section>
 
-            <h3>Lead Developer (Unity) – Quartsoft</h3>
-            <p><strong>Project:</strong> The Farmers</p>
-			<p><strong>Period:</strong>  January 2022 - May 2024</p>
-			<p><strong>Description:</strong>
-            Led the enhancement of the game engine, developed new game mechanics, and played a critical role in task planning for the Unity team. Mentored developers and UI artists, established workflows with the UI department, and ensured effective collaboration with the server-side team.</p>
-			
-			<p><strong>Achievements:</strong></p>
-			<ul class="with-dots">
-				<li> Successfully optimized the game engine, resulting in significant performance improvements.</li>
-				<li> Developed and implemented new game mechanics that enhanced gameplay experience.</li>
-				<li> Improved team productivity by effectively planning and distributing tasks.</li>
-				<li> Mentored and trained team members, leading to improved skill levels across the Unity department.</li>
-				<li> Streamlined communication and processes between the Unity and UI teams, leading to faster development cycles.</li>
-			</ul>		
-            <ul class="no-dots">
-                <li><strong>Technologies:</strong> Unity3D, Message Pack, Facebook SDK, IronSource</li>
-                <li><a href="https://thefarmers.quartsoft.com/en/" class="button" target="_blank">Visit The Farmers</a></li>
-            </ul>
-			<hr>
-            <h3>Unity 3D Developer/Team Lead – Arrible</h3>
-            <p><strong>Project:</strong> Assignment 42</p>
-			<p><strong>Period:</strong>  November 2020 - September 2021</p>
-			<p><strong>Description:</strong>
-            Led a cross-functional team of 4, including a Tech Artist, two Unity Developers, and a Game Designer. Contributed to the development of UI and game logic. Managed project timelines and ensured deliverables were met within the deadline.</p>
-			<p><strong>Achievements:</strong></p>
-			<ul class="with-dots">
-				<li> Successfully launched the game on Steam, receiving positive user feedback.</li>
-				<li> Improved performance by optimizing UI components, leading to a smoother gameplay experience.</li>
-			</ul>
-            <ul class="no-dots">
-                <li><strong>Technologies:</strong> Unity3D, C#, Steam</li>
-                <li><a href="https://store.steampowered.com/app/1641580/Assignment_42/" class="button" target="_blank">View on Steam</a></li>
-            </ul>
-			<hr>
-			
-            <h3>Unity 3D Developer, Co-Founder – Pixis Wild Dream</h3>
-            <p><strong>Project:</strong> Capy Run</p>
-			<p><strong>Period:</strong> March 2020 – November 2020</p>
-			<p><strong>Description:</strong>
-            Developed a 2D Runner game featuring a cute capybara. Solely responsible for all coding aspects, including game mechanics, UI, and optimization.</p>
-			<p><strong>Achievements:</strong></p>
-			<ul class="with-dots">
-				<li> Designed and implemented all game mechanics, UI, and optimization from scratch, resulting in a fully functional and polished 2D Runner game.</li>
-				<li> Sourced, organized, and integrated both custom and third-party assets, ensuring efficient use of resources without compromising quality.</li>
-				<li> Successfully published the game on Google Play, navigating all platform requirements and ensuring optimal performance on Android devices.</li>
-				<li> Optimized game performance for a variety of Android devices, ensuring smooth gameplay even on lower-end hardware.</li>
-				<li> Designed engaging gameplay mechanics and a reward system to maintain user interest and retention.</li>
-			</ul>			
-            <ul class="no-dots">
-                <li><strong>Technologies:</strong> Unity3D, C#, Android</li>
-                <li><a href="https://www.youtube.com/watch?v=WFUAw3BTle4" class="button" target="_blank">Capy Run Trailer</a></li>
-            </ul>
-			<hr>
-			
-            <h3>Unity 3D Developer – Blue Goji</h3>
-            <p><strong>Period:</strong> July 2017 – March 2020</p>
-			<p><strong>Project:</strong> InProgress</p>
-			<p><strong>Description:</strong>
-            Multiplayer VR RPG developed on Unity.</p>
-            <p><strong>Achievements:</strong></p>
-			<ul class="with-dots">
-                <li>Integrated Photon Unity Networking into the project.</li>
-				<li>Developed new game mechanics and optimized existing code.</li>                
-            </ul>
-			<ul class="no-dots">
-                <li><strong>Technologies:</strong> Unity3D, C#, Oculus Rift, HTC Vive, WMR, PUN</li>                
-            </ul>
-			<hr>
-			
-			<p><strong>Project:</strong> GoBike</p>
-            <p><strong>Description:</strong>
-            Racing Multiplayer VR game.</p> 
-			<p><strong>Achievements:</strong></p>
-			<ul class="with-dots">
-                <li>Integrated Photon Bolt Networking, enhancing multiplayer functionality.</li>
-				<li> Developed and optimized new game mechanics.</li>                
-            </ul>
-			<ul class="no-dots">
-                <li><strong>Technologies:</strong> Unity3D, C#, Oculus Rift, HTC Vive, WMR, Photon Bolt</li>    
-				<li><a href="https://www.youtube.com/watch?v=6yktJClyM-M&ab_channel=BlueGoji" class="button" target="_blank">Youtube video</a></li>				
-            </ul>
-			<hr>
+        <section>
+          <h2>Education</h2>
+          <div class="item">
+            <h3>Odessa Polytechnic National University</h3>
+            <p class="meta">Bachelor’s degree in Program Engineering</p>
+          </div>
+          <div class="item">
+            <h3>Unity3D C# Developer Course</h3>
+            <p class="meta">IT Step Academy</p>
+          </div>
+        </section>
 
+        <section>
+          <h2>Recognition</h2>
+          <div class="item">
+            <h3>Global Game Jam 2018</h3>
+            <p class="meta">2nd place in Ukraine</p>
+          </div>
+        </section>
+      </aside>
 
-			<p><strong>Project:</strong> Furiends</p>
-            <p><strong>Description:</strong>
-            AR-based interactive pet game.</p>
-			
-			<p><strong>Achievements:</strong></p>
-			<ul class="with-dots">
-                <li>Developed an item placement system (building grid) and added new game mechanics.</li>
-				<li>Optimized the code to improve AR interaction and performance.</li>                
-            </ul>
-			<ul class="no-dots">
-                <li><strong>Technologies:</strong> Unity3D, C#, AR</li>    
-				<li><a href="https://www.youtube.com/watch?v=V9iDusJzIjo&ab_channel=BlueGoji" class="button" target="_blank">Youtube video</a></li>				
-            </ul>
-			<hr>
-			
-         
-			<p><strong>Project:</strong> Bubmarine</p>
-            <p><strong>Description:</strong>
-            Interactive swimming experience in VR.</p>
-			
-			<p><strong>Achievements:</strong></p>
-			<ul class="with-dots">
-                <li>Integrated VR mechanics for swim training.</li>
-				<li>Developed the player movement system and swimming physics.</li>                
-            </ul>
-			<ul class="no-dots">
-                <li><strong>Technologies:</strong> Unity3D, C#, VR, Oculus Rift, HTC Vive, WMR</li>    
-				<li><a href="https://www.meta.com/en-gb/experiences/pcvr/bubmarine/1125327370889861/" class="button" target="_blank">Project in meta</a></li>				
-            </ul>			 
-        </div>
-		
-		<div class="section languages">
-            <h2>Languages</h2>
-            <ul class="no-dots">
-                <li><strong>English:</strong> Upper-Intermediate.</li>
-                <li><strong>Russian:</strong> Fluent.</li>
-                <li><strong>Ukrainian:</strong> Fluent.</li>
-            </ul>
-        </div>	
+      <div>
+        <section>
+          <h2>Professional Summary</h2>
+          <p class="summary">
+            I am a Senior Unity / C# developer with strong hands-on experience across mobile games,
+            live projects, VR/AR, gameplay, UI systems, optimization, and tooling. I have worked as
+            a Lead Unity Developer, mentored developers and UI artists, supported code quality, and
+            collaborated with art, design, backend, QA, and product teams. I enjoy taking ownership
+            of features from idea to release and building maintainable systems that support long-term
+            production needs.
+          </p>
+        </section>
 
+        <section>
+          <h2>Experience</h2>
 
-        <div class="section contact">
-            <h2>Contact</h2>
-            <ul class="no-dots">
-                <li>Email: <a href="mailto:alkrfree@gmail.com" target="_blank">alkrfree@gmail.com</a></li>
-                <li>LinkedIn: <a href="https://www.linkedin.com/in/%D0%B0%D0%BB%D0%B5%D0%BA%D1%81%D0%B5%D0%B9-%D0%BA%D1%80%D1%8B%D0%B6%D0%B0%D0%BD%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9-199a3466/" target="_blank" >LinkedIn Profile</a></li>
-                <li>GitHub: <a href="https://github.com/alkrfree/" target="_blank">GitHub Profile</a></li>
+          <article class="item">
+            <h3>KIT-AR — Unity Developer</h3>
+            <p class="meta">Feb 2025 — Apr 2026 · Portugal · Industrial AR</p>
+            <div class="link-row" aria-label="KIT-AR links">
+              <a href="https://kit-ar.com/" target="_blank" rel="noopener">KIT-AR website</a>
+            </div>
+            <ul>
+              <li>Worked on an industrial AR solution for production environments using Unity, MRTK, OpenXR, Magic Leap 2, and HoloLens 2.</li>
+              <li>Implemented and improved device integration pipelines, tracking reliability, and cross-device compatibility.</li>
+              <li>Researched, prototyped, and delivered production-focused XR features with physical device testing.</li>
+              <li>Collaborated with a cross-functional team to deliver reliable AR functionality for real-world industrial use cases.</li>
             </ul>
-        </div>	
+          </article>
+
+          <article class="item">
+            <h3>Quartsoft — Lead Unity Developer</h3>
+            <p class="meta">Jan 2022 — May 2024 · Mobile games · Casual / social games · Remote</p>
+            <div class="link-row" aria-label="Quartsoft project links">
+              <a href="https://thefarmers.quartsoft.com/en/" target="_blank" rel="noopener">The Farmers</a>
+              <a href="https://farland.quartsoft.com/en/" target="_blank" rel="noopener">Farland</a>
+            </div>
+            <ul>
+              <li>Worked as Lead Unity Developer on mobile game projects including The Farmers and Farland.</li>
+              <li>Led feature development, technical planning, refactoring, performance optimization, and UI-heavy implementation.</li>
+              <li>Mentored developers and UI artists, supported code review, and improved team development practices.</li>
+              <li>Built internal Unity packages, guidelines, and reusable systems for production workflows.</li>
+              <li>Integrated and maintained third-party SDKs including analytics, ads, Facebook SDK, IronSource, and related mobile services.</li>
+            </ul>
+          </article>
+
+          <article class="item">
+            <h3>Arrible — Unity Developer / Team Lead</h3>
+            <p class="meta">Nov 2020 — Sep 2021 · VR / WebGL / educational games</p>
+            <div class="link-row" aria-label="Arrible project links">
+              <a href="https://store.steampowered.com/app/1641580/Assignment_42/" target="_blank" rel="noopener">Assignment 42 on Steam</a>
+            </div>
+            <ul>
+              <li>Worked on VRChat WebGL room features and Assignment 42, an educational puzzle game released on Steam.</li>
+              <li>Led a small team of 4–5 people and supported development planning, implementation, and delivery.</li>
+            </ul>
+          </article>
+
+          <article class="item">
+            <h3>Pixis Wild Dream — Co-founder / Unity Developer</h3>
+            <p class="meta">Mar 2020 — Nov 2020 · Indie mobile game development</p>
+            <div class="link-row" aria-label="Pixis Wild Dream project links">
+              <a href="https://www.youtube.com/watch?v=WFUAw3BTle4&amp;ab_channel=PixisWildDream" target="_blank" rel="noopener">Capy Run trailer</a>
+            </div>
+            <ul>
+              <li>Co-founded a small indie project and released Capy Run on Android.</li>
+              <li>Handled Unity development responsibilities across gameplay, UI, polish, and release preparation.</li>
+            </ul>
+          </article>
+
+          <article class="item">
+            <h3>Blue Goji — Unity Developer</h3>
+            <p class="meta">Jul 2017 — Mar 2020 · VR fitness / multiplayer</p>
+            <div class="link-row" aria-label="Blue Goji project links">
+              <a href="https://www.bluegoji.com/" target="_blank" rel="noopener">Blue Goji</a>
+              <a href="https://www.youtube.com/watch?v=6yktJClyM-M&amp;ab_channel=BlueGoji" target="_blank" rel="noopener">GoBike video</a>
+              <a href="https://www.youtube.com/watch?v=V9iDusJzIjo&amp;ab_channel=BlueGoji" target="_blank" rel="noopener">Furiends video</a>
+              <a href="https://www.meta.com/experiences/pcvr/bubmarine/1125327370889861/" target="_blank" rel="noopener">Bubmarine on Meta</a>
+            </div>
+            <ul>
+              <li>Worked on GoBike, a VR treadmill cycling project with real-time multiplayer functionality.</li>
+              <li>Contributed to Photon Bolt multiplayer systems with client-server authoritative logic.</li>
+              <li>Worked with VR platforms including Oculus Rift, HTC Vive, and Windows Mixed Reality.</li>
+              <li>Implemented gameplay, physics-related behavior, UI, chat/invites, and VR interaction features.</li>
+            </ul>
+          </article>
+        </section>
+
+        <section>
+          <h2>Selected Projects</h2>
+          <div class="project-grid">
+            <article class="project">
+              <h3><a href="https://kit-ar.com/" target="_blank" rel="noopener">Industrial AR Solution</a></h3>
+              <p>Unity-based AR application for production environments with Magic Leap 2, HoloLens 2, OpenXR, MRTK, device integration, and tracking-focused improvements.</p>
+            </article>
+
+            <article class="project">
+              <h3><a href="https://thefarmers.quartsoft.com/en/" target="_blank" rel="noopener">The Farmers</a> / <a href="https://farland.quartsoft.com/en/" target="_blank" rel="noopener">Farland</a></h3>
+              <p>Mobile casual game development with UI-heavy features, optimization, SDK integrations, reusable systems, mentoring, and live project maintenance.</p>
+            </article>
+
+            <article class="project">
+              <h3><a href="https://www.youtube.com/watch?v=6yktJClyM-M&amp;ab_channel=BlueGoji" target="_blank" rel="noopener">GoBike VR</a></h3>
+              <p>VR treadmill cycling project with real-time multiplayer, VR platform support, networking migration, and gameplay/physics systems.</p>
+            </article>
+
+            <article class="project">
+              <h3><a href="https://store.steampowered.com/app/1641580/Assignment_42/" target="_blank" rel="noopener">Assignment 42 on Steam</a></h3>
+              <p>Educational puzzle game released on Steam. Worked on Unity development and supported a small team during production and delivery.</p>
+            </article>
+          </div>
+        </section>
+
+        <section>
+          <h2>Technical Profile</h2>
+          <ul>
+            <li>Strong understanding of Unity architecture, OOP, SOLID, Factory, Strategy, Mediator, MVP/MVVM-style UI patterns, and event-driven systems.</li>
+            <li>Experience with optimization of UI, batching, draw calls, memory, mobile performance, profiling, and platform-specific constraints.</li>
+            <li>Hands-on background with networking, XR devices, SDK integrations, analytics, ads, editor scripting, testing, and production debugging.</li>
+            <li>Comfortable working in Agile teams, remote collaboration, mentoring, code review, and cross-discipline communication.</li>
+          </ul>
+        </section>
+      </div>
     </div>
+
+    <footer>
+      Last updated: 2026 · This page is designed as a lightweight GitHub Pages resume.
+    </footer>
+  </main>
 </body>
 </html>
